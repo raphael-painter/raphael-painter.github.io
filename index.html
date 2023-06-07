@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>RAPHAEL: Text-to-Image Generation via Large Mixture of Diffusion Paths</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">RAPHAEL: Text-to-Image Generation via Large Mixture of Diffusion Paths</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://xuezeyue.github.io/" target="_blank">Zeyue Xue</a><sup>2*</sup>,
+              </span>
+              <span class="author-block"></span>
+                <a href="https://songguanglu.github.io/" target="_blank">Guanglu Song</a><sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=nDLaim4AAAAJ&hl=zh-CN" target="_blank">Qiushan Guo</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=-zEM0ycAAAAJ&hl=en" target="_blank">Boxiao Liu</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=vls0YhoAAAAJ&hl=zh-CN" target="_blank">Zhuofan Zong</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://liuyu.us/" target="_blank">Yu Liu</a><sup>1†‡</sup>,
+              </span>
+              <span class="author-block">
+                <a href="http://luoping.me/" target="_blank">Ping Luo</a><sup>2‡</sup>
+              </span>
+              
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">SenseTime<sup>1</sup>, The University of Hong Kong<sup>2</sup></span>
+                <span class="eql-cntrb"><small><br>
+                  <sup>*</sup>Indicates equal contribution. <br> 
+                  <sup>†</sup>Indicates project lead. <sup>‡</sup>Indicates corresponding authors. <br>
+                  Work done during Zeyue's internship at SenseTime Research.
+                </small></span>
+              </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-to-image generation has recently witnessed remarkable achievements. We introduce a text-conditional image diffusion model, termed RAPHAEL, to generate highly artistic images, which accurately portray the text prompts, encompassing multiple nouns, adjectives, and verbs. This is achieved by stacking tens of mixture-of-experts (MoEs) layers, i.e., space-MoE and time-MoE layers, enabling billions of diffusion paths (routes) from the network input to the output. Each path intuitively functions as a "painter" for depicting a particular textual concept onto a specified image region at a diffusion timestep. Comprehensive experiments reveal that RAPHAEL outperforms recent cutting-edge models, such as Stable Diffusion, ERNIE-ViLG 2.0, DeepFloyd, and DALL-E 2, in terms of both image quality and aesthetic appeal. Firstly, RAPHAEL exhibits superior performance in switching images across diverse styles, such as Japanese comics, realism, cyberpunk, and ink illustration. Secondly, a single model with three billion parameters, trained on 1,000 A100 GPUs for two months, achieves a state-of-the-art zero-shot FID score of 6.61 on the COCO dataset. Furthermore, RAPHAEL significantly surpasses its counterparts in human evaluation on the ViLG-300 benchmark. We believe that RAPHAEL holds the potential to propel the frontiers of image generation research in both academia and industry, paving the way for future breakthroughs in this rapidly evolving field.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          A sureal parallel world where mankind avoid extinction by preserving nature, epic trees, water streams, various flowers, intricate details, rich colors, rich vegetation, cinematic, symmetrical, beautiful lighting, V-Ray render, sun rays, magical lights, photography.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          A painting of river running through mountainrange, daytime, Dan Mumford, colorful, artistic, high detail.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered">
+          Pirate ship trapped in a cosmic maelstrom nebula, rendered in cosmic beach whirlpool engine, volumetric lighting, spectacular, ambient lights, light pollution, cinematic atmosphere, art nouveau style, illustration art artwork by SenseiJaye, intricate detail.
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Photography closeup portrait of an adorable rusty broken-down steampunk robot covered in moss moist and budding vegetation, surrounded by tall grass, gorgeous dramatic spring landscape landscape scenic photograph, misty futuristic sci-fi forest environment, bokeh, depth of field.
+      </h2>
+    </div>
+    <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/carousel5.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        The Caped Crusader, Gotham skyline, rooftop, mysterious, powerful, nighttime, mixed media, expressionism, dark tones, high contrast, in the style of comic book artist Frank Miller, modern, gritty and textured, collage technique.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- Paper Reults -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">COCO Zero-Shot Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Comparisons</b> of RAPHAEL with the recent representative text-to-image generation models on the MS-COCO using zero-shot
+            FID-30k. We see that RAPHAEL outperforms all previous works in image quality, even a commercial product released recently.
+          </p>
+          <img src="./static/images/FID.png" alt="FID" class="method-overview-full-img  method-overview" draggable="false" />
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper Reults -->
+
+
+<!-- Paper Reults -->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Comparison with SOTA T2I models</h2>
+        <div class="content has-text-justified">
+          <h3 class="title is-4">Comparison of presenting concepts</h3>
+          <img src="./static/images/comparison_sota.png" alt="SOTA" class="method-overview-full-img  method-overview" draggable="false" />
+          <p>
+            <b>Comparisons</b> of RAPHAEL with recent representative generators, Stable Diffusion XL, DeepFloyd, DALL-E 2, 
+            and ERNIE-ViLG 2.0. They are given the same prompts, where the words that the human artists yearn to preserve within the 
+            generated images are highlighted in red. We see that previous models often fail to preserve the desired concepts. 
+            For example, only the RAPHAEL-generated images precisely reflect the prompts such as "pearl earring, Vermeer", "playing soccer", "five cars", "black
+            high-waisted trouser", "white hair, manga, moon", and "sign, RAPHAEL", while other models generate compromised results.
+          </p>
+          <h3 class="title is-4">Comparison of aesthetics</h3>
+          <img src="./static/images/human_eval.png" alt="SOTA" class="method-overview-full-img  method-overview" draggable="false" />
+          <p>
+            <b>Comparisons</b> of RAPHAEL with DALL-E 2, Stable Diffusion XL (SD XL), ERNIE-ViLG 2.0, and DeepFloyd in a user study using the ViLG-300 benchmark. We report the user's
+            preference rates with 95% confidence intervals. We see that RAPHAEL can generate images with higher quality and better 
+            conform to the prompts.
+          </p>
+          
+          <h3 class="title is-4">Efficient finetuning</h3>
+          <img src="./static/images/lora.png" alt="SOTA" class="method-overview-full-img  method-overview" draggable="false" />
+          <p>
+            <b>Results with LoRA</b> We use 32 images to finetune RAPHAEL and Stable Diffusion. The prompts are "A boy, flower/night/sword/none", 
+            only RAPHAEL preserves the concepts in prompts while Stable Diffusion yields compromised results.
+          </p>
+          
+          <h3 class="title is-4">Prompts</h3>
+          <p>
+            <b> Prompts  generated by GPT-3.5 for Section 3.1 can be found <a href="./static/text/prompts.txt" target="_blank">here</a>.
+            We use these templates to generate images and diffusion paths for each adjective, noun, and verb. The diffusion paths can be classified by XGBoost algorithm, and the accuracies reach more than 90%.
+            </b>
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper Reults -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
